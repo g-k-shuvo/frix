@@ -1,0 +1,23 @@
+#overview {
+  .overview-cards {
+    .overview-card {
+      text-align: center;
+      margin: 36px 0;
+      .card-icon {
+        margin-bottom: 14px;
+      }
+      .card-heading {
+        margin-bottom: 14px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+        letter-spacing: 2px;
+      }
+      .card-details {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+}

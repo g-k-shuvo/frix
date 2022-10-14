@@ -1,0 +1,25 @@
+.transparent-navbar {
+  background: transparent;
+}
+.scrolled-navbar {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.navbar {
+  padding: 10px 0;
+  .navbar-logo {
+    max-width: 110px;
+  }
+  .navbar-nav {
+    .nav-link {
+      margin-left: 16px;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-link.active {
+      border-bottom: 2px solid #000;
+    }
+  }
+}

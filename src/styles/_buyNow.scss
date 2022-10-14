@@ -1,0 +1,29 @@
+#buy-now {
+  background: #f5f5f5;
+  .buy-text {
+    h1 {
+      font-size: 36px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 24px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 24px;
+    }
+    .frix-btn {
+      padding: 9px 27px;
+    }
+
+    p {
+      margin-top: 18px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      line-height: 25px;
+    }
+  }
+}
