@@ -1,0 +1,21 @@
+.blog-header {
+  padding: 30px 0;
+  .navbar-logo {
+    max-width: 110px;
+  }
+
+  .logo-container {
+    display: inline-block;
+  }
+
+  .return-home {
+    text-align: right;
+    .return-home-btn {
+      display: inline-block;
+    }
+
+    .icon {
+      margin-right: 6px;
+    }
+  }
+}

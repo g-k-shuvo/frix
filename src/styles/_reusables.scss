@@ -1,5 +1,5 @@
 .section-padding {
-  padding: 100px 0;
+  padding: 100px 0px;
 }
 
 .section-top {
@@ -53,5 +53,21 @@
     border: 1px solid #000;
     color: #000;
     background-color: transparent;
+  }
+}
+
+.bread-crumb {
+  padding: 16px 30px;
+  background: #f7f6f6;
+  border-radius: 4px;
+  margin-bottom: 80px;
+
+  h3 {
+    font-weight: 300;
+    font-size: 18px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

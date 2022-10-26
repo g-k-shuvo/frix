@@ -9,7 +9,7 @@ import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import Overview from "../components/Overview"
 import Reviews from "../components/Reviews"
-import "../styles/home.scss"
+import "../styles/main.scss"
 
 const HomePage = props => {
   const data = props.data
@@ -89,14 +89,16 @@ export const query = graphql`
       }
     }
 
-    FeaturedBlogsQuery: allContentfulBlogPost(limit: 3) {
+    FeaturedBlogsQuery: allContentfulBlogPost(
+      limit: 3
+      sort: { fields: date, order: DESC }
+    ) {
       nodes {
         author
         date(formatString: "DD MMMM, YYYY")
         featuredImage {
           gatsbyImageData(width: 500, placeholder: BLURRED)
         }
-        excerpt
         slug
         title
         id

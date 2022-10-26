@@ -5,7 +5,7 @@ import { FaFacebookSquare, FaTwitterSquare, FaLinkedin } from "react-icons/fa"
 const Footer = () => {
   const thisYear = new Date().getFullYear()
   return (
-    <footer className="section-padding">
+    <footer>
       <Container>
         <Row>
           <Col lg={6}>
