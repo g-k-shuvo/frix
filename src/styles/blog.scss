@@ -44,3 +44,16 @@
     }
   }
 }
+
+.blog-content-container {
+  .featured-image {
+    height: 500px;
+    object-fit: cover;
+  }
+  .blog-content {
+    margin: 70px 0;
+    .info {
+      margin-bottom: 40px;
+    }
+  }
+}

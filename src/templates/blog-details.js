@@ -1,12 +1,16 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import ContentfulRichText from "../components/contentful-rich-text"
 import { Container, Row, Col } from "react-bootstrap"
 import BlogHeader from "../components/BlogHeader"
 import Footer from "../components/Footer"
 import "../styles/main.scss"
+import blog from "../pages/blog"
 
 const blogDetails = props => {
+  const blogDetails = props.data
+  console.log(blogDetails)
   return (
     <>
       <BlogHeader />
@@ -15,37 +19,34 @@ const blogDetails = props => {
           <div className="bread-crumb">
             <h3>
               <Link to="/blog">Blog</Link>{" "}
-              <span>
-                / Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Fugiat, assumenda quo nostrum consequatur ab minima? Sequi quam,
-                magni rerum ea repellat assumenda nostrum! Voluptatum quam ipsum
-                eligendi, eveniet natus repellat minus corrupti similique non
-                mollitia dolor, aliquid, alias est quidem aspernatur
-                reprehenderit nihil reiciendis iste ullam doloremque fuga?
-                Assumenda, dolores maiores ullam reprehenderit distinctio
-                facilis laudantium aliquid doloribus nesciunt cum praesentium
-                vitae officiis minima libero consectetur accusantium odio
-                voluptates hic, molestiae quia minus, autem neque? Tempore
-                eveniet magni nulla repellat harum fugiat quam deleniti soluta,
-                officiis libero debitis facilis minus minima sed nemo
-                repudiandae animi reiciendis quo provident accusantium sint
-                quaerat incidunt obcaecati. Laudantium, aliquam eveniet! Vitae
-                facilis delectus quasi maxime eum, provident ducimus vero itaque
-                officiis tempore ratione sint autem sit, corporis, tenetur quae
-                possimus nobis alias nostrum dolores qui eveniet numquam
-                consectetur! Consectetur veniam debitis rerum praesentium
-                sapiente necessitatibus quod commodi, iusto atque sed mollitia,
-                aliquam amet. Consequuntur eaque provident distinctio
-                perferendis natus, autem illum, quidem odit blanditiis aliquid
-                officiis dolorem corporis, sit culpa cupiditate error! Ab esse
-                voluptatum fuga! Modi corrupti alias architecto odio est cum,
-                sit animi ex repellendus iusto quo molestiae! Odit tenetur
-                nesciunt eaque ut accusamus, reiciendis totam tempora! Sequi,
-                recusandae! Tempore, quasi maiores?
-              </span>
+              <span>/ {blogDetails.BlogQuery.title}</span>
             </h3>
           </div>
-          <h1>Blog Details</h1>
+          <Row>
+            <Col lg={10} className="m-auto">
+              <div className="blog-content-container">
+                <GatsbyImage
+                  image={blogDetails.BlogQuery.featuredImage.gatsbyImageData}
+                  alt={blogDetails.BlogQuery.title}
+                  className="featured-image"
+                />
+                <div className="blog-content">
+                  <div className="info">
+                    <h5>
+                      Posted By: {blogDetails.BlogQuery.author} /{" "}
+                      {blogDetails.BlogQuery.date}
+                    </h5>
+                  </div>
+                  <h1>{blogDetails.BlogQuery.title}</h1>
+                  <div className="raw-content">
+                    <ContentfulRichText
+                      richText={blogDetails.BlogQuery.blogContent}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Container>
       </section>
       <Footer />
@@ -53,21 +54,29 @@ const blogDetails = props => {
   )
 }
 
-// export const query = graphql`
-//   query {
-//     BlogQuery: allContentfulBlogPost(sort: { fields: date, order: DESC }) {
-//       nodes {
-//         author
-//         date(formatString: "DD MMMM, YYYY")
-//         featuredImage {
-//           gatsbyImageData(width: 500, placeholder: BLURRED)
-//         }
-//         slug
-//         title
-//         id
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query ($slug: String) {
+    BlogQuery: contentfulBlogPost(slug: { eq: $slug }) {
+      author
+      date(formatString: "DD MMMM, YYYY")
+      title
+      blogContent {
+        raw
+        references {
+          ... on ContentfulAsset {
+            contentful_id
+            __typename
+            gatsbyImageData(formats: AUTO, placeholder: BLURRED, width: 1000)
+          }
+        }
+      }
+      slug
+      featuredImage {
+        title
+        gatsbyImageData(placeholder: BLURRED, width: 1000)
+      }
+    }
+  }
+`
 
 export default blogDetails
