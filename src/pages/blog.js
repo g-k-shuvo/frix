@@ -8,7 +8,6 @@ import "../styles/main.scss"
 
 const blog = props => {
   const blogs = props.data.BlogQuery.nodes
-  console.log(blogs)
   return (
     <>
       <BlogHeader />

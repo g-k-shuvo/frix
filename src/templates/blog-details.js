@@ -6,11 +6,9 @@ import { Container, Row, Col } from "react-bootstrap"
 import BlogHeader from "../components/BlogHeader"
 import Footer from "../components/Footer"
 import "../styles/main.scss"
-import blog from "../pages/blog"
 
 const blogDetails = props => {
   const blogDetails = props.data
-  console.log(blogDetails)
   return (
     <>
       <BlogHeader />
