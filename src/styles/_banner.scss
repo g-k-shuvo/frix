@@ -1,0 +1,33 @@
+#banner {
+  background: url(../images/book-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  .banner-text {
+    max-width: 560px;
+    h1 {
+      font-family: "Oswald", sans-serif;
+      font-size: 38px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: #000;
+      span {
+        text-decoration: underline;
+      }
+    }
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 15px;
+      line-height: 27px;
+      color: #535353;
+    }
+    .frix-btn {
+      margin-top: 20px;
+    }
+  }
+}

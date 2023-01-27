@@ -1,0 +1,73 @@
+.section-padding {
+  padding: 100px 0px;
+}
+
+.section-top {
+  text-align: center;
+  margin-bottom: 38px;
+  .section-heading {
+    font-size: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #000;
+  }
+
+  .section-sub-heading {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .section-sep-line {
+    height: 2px;
+    margin: 0 auto;
+    width: 40px;
+    background: #b1b1b1;
+  }
+}
+
+.section-details {
+  margin-bottom: 60px;
+  p {
+    font-size: 15px;
+    text-align: center;
+    line-height: 27px;
+  }
+}
+
+.frix-btn {
+  border: 1px solid #000;
+  color: #fff;
+  background-color: #000;
+  padding: 8px 20px 8px;
+  width: auto;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.4s ease-in-out;
+  &:hover {
+    border: 1px solid #000;
+    color: #000;
+    background-color: transparent;
+  }
+}
+
+.bread-crumb {
+  padding: 16px 30px;
+  background: #f7f6f6;
+  border-radius: 4px;
+  margin-bottom: 80px;
+
+  h3 {
+    font-weight: 300;
+    font-size: 18px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,22 @@
+footer {
+  background: #282828;
+  padding: 30px 0;
+
+  .footer-copyright {
+    p {
+      margin-bottom: 0;
+      color: #5c5c5c;
+    }
+  }
+
+  .footer-socials {
+    text-align: right;
+    a {
+      margin-left: 30px;
+      color: #5c5c5c;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+#contact {
+  .address {
+    margin: 50px 0px 70px 0px;
+    text-align: center;
+    .address-text {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #7b7b7b;
+      line-height: 24px;
+    }
+  }
+  .contact-container {
+    .contact-text {
+      .heading {
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        font-weight: 600;
+      }
+      .details {
+        font-size: 14px;
+        line-height: 27px;
+      }
+    }
+    .contact-form {
+      form {
+        input,
+        textarea {
+          display: block;
+          width: 100%;
+          margin: 24px 0;
+          padding: 8px 16px;
+          font-size: 14px;
+          border: 1px solid #dbdada;
+          color: #7b7b7b;
+          &::placeholder {
+            color: #7b7b7b;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
